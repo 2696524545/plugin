@@ -33,7 +33,10 @@ kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter
 ### 5.插件协助
 已购买该插件，安装出现问题，请联系QQ：2696524545
 
-### 6.功能展示
+### 6.插件说明地址
+> https://github.com/2696524545/plugin/blob/main/README.md
+
+### 7.功能展示
 #### 集群管理
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters.png)
 #### 节点管理
