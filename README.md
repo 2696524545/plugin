@@ -19,5 +19,4 @@ PluginInit(PrivateGroup, kubernetes.CreatekubernetesPlug()) // kubernetes插件
 ```
 
 ### 4.功能展示
-
-![]https://github.com/2696524545/plugin/blob/main/9EA0FD88-C001-4C1C-B1B8-AB214333429C.png
+![](https://github.com/2696524545/plugin/blob/main/9EA0FD88-C001-4C1C-B1B8-AB214333429C.png)
