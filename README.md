@@ -32,7 +32,7 @@ kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter
 ```
 
 ### 5.插件协助
-已购买该插件，安装出现问题，请联系QQ：2696524545
+已购买该插件，安装出现问题，请联系QQ：2696524545 (当前插件处于促销期，两个月后会涨价，先到先得，莫失良机)
 
 ### 6.插件说明地址
 > https://github.com/2696524545/plugin/blob/main/README.md
