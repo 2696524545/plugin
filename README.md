@@ -44,8 +44,10 @@ kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter
 ![节点管理](https://github.com/2696524545/plugin/blob/main/node.png)
 #### 工作负载
 ![工作负载](https://github.com/2696524545/plugin/blob/main/workloads.png)
+#### 工作负载编辑
+![工作负载编辑](https://github.com/2696524545/plugin/blob/main/workloads.png)
 #### Deployment详情
-![Deployment详情](https://github.com/2696524545/plugin/blob/main/DeploymentDetail.png)
+![Deployment详情](https://github.com/2696524545/plugin/blob/main/resourceEdit.png)
 #### Pod终端
 ![Pod终端](https://github.com/2696524545/plugin/blob/main/PodTerminal.png)
 #### Pod管理
