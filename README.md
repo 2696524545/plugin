@@ -36,7 +36,8 @@ kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter
 
 ### 6.插件说明及购买地址
 > https://github.com/2696524545/plugin/blob/main/README.md
- [Gin-Vue-Admin插件市场]: https://plugin.gin-vue-admin.com/#/layout/newPluginInfo?id=42 
+
+[Gin-Vue-Admin插件市场]: https://plugin.gin-vue-admin.com/#/layout/newPluginInfo?id=42 
 ### 7.功能展示
 #### 集群管理
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters.png?raw=true)
