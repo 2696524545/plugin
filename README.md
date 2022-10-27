@@ -18,6 +18,8 @@ kubernetes插件
 ### 3.后端插件Websocket路由配置
 gin-vue-admin/server/initialize/router.go
 ```
+导入路由: 
+   kubernetes "github.com/flipped-aurora/gin-vue-admin/server/plugin/kubernetes/router"
 初始化路由里面加入插件配置(func Routers() *gin.Engine 初始化路由方法)
 kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter 
 {
