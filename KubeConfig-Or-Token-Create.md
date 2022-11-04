@@ -51,8 +51,8 @@ my-kube   Ready     2h        v1.6.7+coreos.0
 ```
 #### 1.创建用户
 ```
-mkdir -p  role
-cd  /role
+# mkdir -p  role
+# cd  /role
 在kube-system下创建admin-user
 vi CreateServiceAccount.yaml
 apiVersion: v1
@@ -62,6 +62,7 @@ metadata:
   namespace: kube-system
 ```
 #### 2.用户赋权
+```
 # vi RoleBinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -75,7 +76,7 @@ subjects:
 - kind: ServiceAccount
   name: admin-user
   namespace: kube-system
-  
+```  
 #### 3.创建资源
 ```
 # kubectl create -f CreateServiceAccount.yaml
