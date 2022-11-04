@@ -51,10 +51,10 @@ my-kube   Ready     2h        v1.6.7+coreos.0
 ```
 #### 1.创建用户
 ```
-# mkdir -p  role
-# cd  /role
+mkdir -p  role
+cd  /role
 在kube-system下创建admin-user
-# vi CreateServiceAccount.yaml
+vi CreateServiceAccount.yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
