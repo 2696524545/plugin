@@ -43,3 +43,54 @@ cat /etc/kubernetes/ssl/node-node1-key.pem | base64 -w 0
 $ kubectl get nodes
 NAME      STATUS    AGE       VERSION
 my-kube   Ready     2h        v1.6.7+coreos.0
+
+# 如何手动生成 Kubernetes Token 文件
+### 集群版本小于1.24
+```
+注意： Kubernetes < 1.24 创建的
+```
+#### 1.创建用户
+```
+# mkdir -p  role
+# cd  /role
+在kube-system下创建admin-user
+# vi CreateServiceAccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kube-system
+```
+#### 2.用户赋权
+# vi RoleBinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kube-system
+  
+#### 3.创建资源
+```
+# kubectl create -f CreateServiceAccount.yaml
+# kubectl create -f RoleBinding.yaml
+```
+
+#### 4.获取token
+```
+# Token=$(kubectl describe secret $(kubectl get secret -n kube-system | grep ^admin-user | awk '{print $1}') -n kube-system | grep -E '^token'| awk '{print $2}')
+# echo $Token
+```
+
+
+
+### 集群版本1.24
+```
+Kubernetes >= 1.24 基于安全方面的考虑Secret API将不会为ServiceAccount自动创建Secret对象存放Token信息，需要使用TokenRequest API来获取ServiceAccount的Token。该Token具备过期时间，更加安全。
+```
