@@ -91,7 +91,32 @@ subjects:
 
 
 
-### 集群版本1.24
+### 集群版本 >= 1.24
 ```
 Kubernetes >= 1.24 基于安全方面的考虑Secret API将不会为ServiceAccount自动创建Secret对象存放Token信息，需要使用TokenRequest API来获取ServiceAccount的Token。该Token具备过期时间，更加安全。
 ```
+#### 1.角色授权
+```
+kubectl create serviceaccount admin-user
+kubectl create clusterrolebinding admin-user-binding \
+  --clusterrole cluster-admin \
+  --serviceaccount default:admin-user
+ ```
+#### 2.创建凭据
+ ```
+ cat <<EOF | kubectl create -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: admin-user-token
+  annotations:
+    kubernetes.io/service-account.name: admin-user
+type: kubernetes.io/service-account-token
+EOF
+ ```
+ #### 3.打印凭据
+ ```
+ SECRET_NAME="admin-user-token"
+TOKEN=$(kubectl get secret ${SECRET_NAME} -o jsonpath='{$.data.token}' | base64 -d | sed $'s/$/\\\n/g')
+echo $TOKEN
+ ```
