@@ -39,11 +39,11 @@ cat /etc/kubernetes/ssl/node-node1-key.pem | base64 -w 0
 ```
 
 ### 3.验证证书：
-
+```
 $ kubectl get nodes
-NAME      STATUS    AGE       VERSION
-my-kube   Ready     2h        v1.6.7+coreos.0
-
+NAME                 STATUS   ROLES           AGE   VERSION
+kind-control-plane   Ready    control-plane   43d   v1.25.0
+```
 # 如何创建 Kubernetes Token凭据
 ### 集群版本小于1.24
 ```
