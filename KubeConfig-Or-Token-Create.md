@@ -44,7 +44,7 @@ $ kubectl get nodes
 NAME      STATUS    AGE       VERSION
 my-kube   Ready     2h        v1.6.7+coreos.0
 
-# 如何手动生成 Kubernetes Token 文件
+# 如何创建 Kubernetes Token凭据
 ### 集群版本小于1.24
 ```
 注意： Kubernetes < 1.24 创建的
