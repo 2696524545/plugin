@@ -4,7 +4,8 @@
     npm i monaco-editor-vue3@0.1.6 js-yaml@4.1.0  \
           vue-chartjs@4.1.1 \
           xterm@4.19.0 \
-          xterm-addon-fit@0.5.0"
+          xterm-addon-fit@0.5.0" \
+          js-base64@^3.7.3
 ```
 ### 2.后端插件安装
 #### 插件放入gin-vue-admin/server/plugin，后端插件引入
@@ -52,6 +53,7 @@ kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter
 ![节点管理](https://github.com/2696524545/plugin/blob/main/node.png?raw=true)
 #### 工作负载
 ![工作负载](https://github.com/2696524545/plugin/blob/main/workloads.png?raw=true)
+![工作负载](https://github.com/2696524545/plugin/blob/main/workload-form.png?raw=true)
 #### Deployment详情
 ![Deployment详情](https://github.com/2696524545/plugin/blob/main/DeploymentDetail.png?raw=true)
 #### Deployment编辑
@@ -66,6 +68,7 @@ kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter
 ![命名空间管理](https://github.com/2696524545/plugin/blob/main/namespaces.png?raw=true)
 #### 网络管理
 ![网络管理](https://github.com/2696524545/plugin/blob/main/networks.png?raw=true)
+![网络管理](https://github.com/2696524545/plugin/blob/main/network-form.png?raw=true)
 #### 配置管理
 ![配置管理](https://github.com/2696524545/plugin/blob/main/configs.png?raw=true)
 ![存储管理](https://github.com/2696524545/plugin/blob/main/storages.png?raw=true)
