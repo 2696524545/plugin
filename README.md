@@ -51,6 +51,7 @@ kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter
 [KubeConfig及Token凭据如何创建?]https://github.com/2696524545/plugin/blob/main/KubeConfig-Or-Token-Create.md
 
 [Prometheus Operator 快速部署?]https://github.com/2696524545/plugin/blob/main/Prometheus-Operator.md
+
 [Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作日志会写入失败?]
 ```
 Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作日志会写入失败，修改字段类型：
