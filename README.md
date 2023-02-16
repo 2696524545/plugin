@@ -51,6 +51,17 @@ kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter
 [KubeConfig及Token凭据如何创建?]https://github.com/2696524545/plugin/blob/main/KubeConfig-Or-Token-Create.md
 
 [Prometheus Operator 快速部署?]https://github.com/2696524545/plugin/blob/main/Prometheus-Operator.md
+```
+Prometheus 数据查询过多，Gin-Vue-Admin 操作日志会写入失败，修改字段类型：
+表名:
+   sys_operation_records
+ 
+  字段名：  body  修改为 longtext 类型
+  字段名：  resp  修改为 longtext 类型
+
+
+
+```
 ### 9.功能展示
 #### 集群管理
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters.png?raw=true)
