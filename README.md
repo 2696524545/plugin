@@ -1,6 +1,6 @@
 ### 升级内容
 ```
-1.密钥管理，私有镜像仓库登录密钥支持多个仓库信息填入。
+1.打通普罗米修斯监控，提供，节点，Pod资源监控。
 ```
 ### 1.前端插件安装
 #### 插件拷贝至gin-vue-admin/web/src/plugin/ 目录，安装软件依赖
@@ -56,6 +56,8 @@ kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters2.png?raw=true)
 #### 节点管理
 ![节点管理](https://github.com/2696524545/plugin/blob/main/node.png?raw=true)
+#### 节点监控
+![节点监控](https://github.com/2696524545/plugin/blob/main/nodemonitor.png?raw=true)
 #### 工作负载
 ![工作负载](https://github.com/2696524545/plugin/blob/main/workloads.png?raw=true)
 ![工作负载](https://github.com/2696524545/plugin/blob/main/workload-form.png?raw=true)
@@ -63,6 +65,8 @@ kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter
 ![Deployment详情](https://github.com/2696524545/plugin/blob/main/DeploymentDetail.png?raw=true)
 #### Deployment编辑
 ![Deployment编辑](https://github.com/2696524545/plugin/blob/main/resourceEdit.png?raw=true)
+#### Pod监控
+![Pod监控](https://github.com/2696524545/plugin/blob/main/podmonitor.png?raw=true)
 #### Pod终端
 ![Pod终端](https://github.com/2696524545/plugin/blob/main/PodTerminal.png?raw=true)
 #### Pod终端日志
