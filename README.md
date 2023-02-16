@@ -54,7 +54,7 @@ kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter
 ### 9.功能展示
 #### 集群管理
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters.png?raw=true)
-![集群管理](https://github.com/2696524545/plugin/blob/main/clusters2.png?raw=true)
+![集群管理](https://github.com/2696524545/plugin/blob/main/clusters3.png?raw=true)
 #### 节点管理
 ![节点管理](https://github.com/2696524545/plugin/blob/main/node.png?raw=true)
 #### 节点监控
