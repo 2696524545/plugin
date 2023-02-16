@@ -9,7 +9,7 @@
 ### 2.部署Prometheus Operator
 ```
     git clone  https://github.com/prometheus-operator/kube-prometheus.git
-    kubectl create -f  kube-prometheus/manifests/setup         #创建命名空间和CRD
+    kubectl create -f  kube-prometheus/manifests/setup             #创建命名空间和CRD
     kubectl create -f  kube-prometheus/manifests/                  #创建资源
 ```
 ### 3.端口转发(由于平台在集群外部运行，没做服务暴露可以转发提供测试)
