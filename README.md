@@ -98,3 +98,7 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
 #### 访问控制
 ![访问控制](https://github.com/2696524545/plugin/blob/main/access.png?raw=true)
 
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=2696524545/plugin&type=Date)](https://star-history.com/#2696524545/plugin&Date)
