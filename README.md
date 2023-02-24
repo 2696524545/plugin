@@ -61,9 +61,13 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
  
   字段名：  resp  修改为 longtext 类型
 
-
-
 ```
+[MonacoEditor YAML 编辑器 鼠标定位不准问题？]
+由于字体兼容性问题， 编辑器光标位置错误，解决办法：
+注释全局font-family，文件路径 src/style/main.scss
+![81B5DA41-8AB0-4DAE-8BB0-D0DA17E043FE](https://user-images.githubusercontent.com/5716348/221067415-735b0f41-406a-4678-a94d-b55add5a7b2c.png)
+
+
 ### 9.功能展示
 #### 集群管理
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters.png?raw=true)
