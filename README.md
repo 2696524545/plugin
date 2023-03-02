@@ -18,7 +18,7 @@ gin-vue-admin/server/initialize/plugin.go 添加
 ```
 import  "github.com/flipped-aurora/gin-vue-admin/server/plugin/kubernetes"
 
-PluginInit(PrivateGroup, kubernetes.CreatekubernetesPlug()) // 
+PluginInit(PrivateGroup, kubernetes.CreateKubernetesPlug()) // 
 kubernetes插件
 ```
 ### 3.后端插件Websocket路由配置
