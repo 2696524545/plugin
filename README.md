@@ -11,6 +11,7 @@
           xterm@4.19.0 \
           xterm-addon-fit@0.5.0" \
           js-base64@^3.7.3
+          moment
 ```
 ### 2.后端插件安装
 #### 插件放入gin-vue-admin/server/plugin，后端插件引入
