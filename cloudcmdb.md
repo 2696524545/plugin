@@ -23,7 +23,11 @@ PluginInit(PrivateGroup, cloudcmdb.CreateCloudCmdbPlug())
  gin-vue-admin 目录执行:    go mod tidy        #安装插件所需依赖
 ```
 
-#### 4. 功能预览
+### 4.插件说明
+[Github地址]https://github.com/2696524545/plugin/blob/main/cloudcmdb.md
+
+
+#### 5. 功能预览
 厂商管理
 ![厂商管理](https://github.com/2696524545/plugin/blob/main/%E5%8E%82%E5%95%86%E7%AE%A1%E7%90%86.png?raw=true)
 
