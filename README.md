@@ -1,7 +1,6 @@
 ### 升级内容
 ```
-1.打通普罗米修斯监控，提供，节点，Pod资源监控。
-2.支持时间选择七天内监控数据。
+Kruise Rollouts 是一个旁路组件集成，提供高级渐进式交付功能， 已集成多批次发布功能。
 ```
 ### 1.前端插件安装
 #### 插件拷贝至gin-vue-admin/web/src/plugin/ 目录，安装软件依赖
@@ -70,6 +69,11 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
 
 
 ### 9.功能展示
+### 新功能（Kruise Rollouts 多批次发布）
+
+![多批次发布](https://github.com/2696524545/plugin/blob/main/Kruise-Rollouts.gif?raw=true)
+
+![集群管理](https://github.com/2696524545/plugin/blob/main/clusters.png?raw=true)
 #### 集群管理
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters.png?raw=true)
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters3.png?raw=true)
