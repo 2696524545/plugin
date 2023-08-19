@@ -67,7 +67,7 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
 注释全局font-family，文件路径 src/style/main.scss
 ![81B5DA41-8AB0-4DAE-8BB0-D0DA17E043FE](https://user-images.githubusercontent.com/5716348/221067415-735b0f41-406a-4678-a94d-b55add5a7b2c.png)
 
-[Kruise Rollouts 金丝雀发布最佳实践](https://github.com/openkruise/rollouts/blob/master/docs/tutorials/basic_usage.md)
+[Kruise Rollouts 金丝雀发布最佳实践]https://github.com/openkruise/rollouts/blob/master/docs/tutorials/basic_usage.md
 
 
 ### 9.功能展示
