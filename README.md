@@ -1,6 +1,8 @@
 ### 升级内容
 ```
-Kruise Rollouts 是一个旁路组件集成，提供高级渐进式交付功能， 已集成多批次发布功能。
+Kruise Rollouts 是一个旁路组件集成，提供高级渐进式交付功能：
+  1.Deployment、CloneSet、StatefulSet、Advanced StatefulSet的多批量更新策略。
+  2.金丝雀更新部署策略。
 ```
 ### 1.前端插件安装
 #### 插件拷贝至gin-vue-admin/web/src/plugin/ 目录，安装软件依赖
@@ -68,7 +70,8 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
 ![81B5DA41-8AB0-4DAE-8BB0-D0DA17E043FE](https://user-images.githubusercontent.com/5716348/221067415-735b0f41-406a-4678-a94d-b55add5a7b2c.png)
 
 [Kruise Rollouts 金丝雀发布最佳实践]https://github.com/openkruise/rollouts/blob/master/docs/tutorials/basic_usage.md
-
+[Kruise Rollouts 多批次发布最佳实践]https://openkruise.io/rollouts/user-manuals/strategy-multi-batch-update
+[Kruise Rollouts A/B 测试发布策略最佳实践]https://openkruise.io/rollouts/user-manuals/strategy-ab-testing
 
 ### 9.功能展示
 ### 新功能（Kruise Rollouts 多批次发布）
