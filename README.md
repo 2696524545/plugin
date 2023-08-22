@@ -87,8 +87,6 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
 
 ![Pod TCP指标监控](https://github.com/2696524545/plugin/blob/main/podTcpMonitor.png?raw=true)
 
-
-![多批次发布](https://github.com/2696524545/plugin/blob/main/Kruise-Rollouts.gif?raw=true)
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters.png?raw=true)
 #### 集群管理
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters.png?raw=true)
