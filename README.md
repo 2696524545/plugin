@@ -3,6 +3,9 @@
 Kruise Rollouts 是一个旁路组件集成，提供高级渐进式交付功能：
   1.Deployment、CloneSet、StatefulSet、Advanced StatefulSet的多批量更新策略。
   2.金丝雀更新部署策略。
+
+普罗米修斯Pod监控指标增加Pod TCP 指标监控：
+  1.通过kubeskoop-exporter 收集Pod TCP网络指标进行图表展示
 ```
 ### 1.前端插件安装
 #### 插件拷贝至gin-vue-admin/web/src/plugin/ 目录，安装软件依赖
@@ -73,11 +76,18 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
 [Kruise Rollouts 多批次发布最佳实践]https://openkruise.io/rollouts/user-manuals/strategy-multi-batch-update
 [Kruise Rollouts A/B 测试发布策略最佳实践]https://openkruise.io/rollouts/user-manuals/strategy-ab-testing
 
+[kubeskoop-exporter YAML 文件]https://github.com/2696524545/plugin/blob/main/kubeskoop-exporter.yaml
+
 ### 9.功能展示
 ### 新功能（Kruise Rollouts 多批次发布）
 
 ![多批次发布](https://github.com/2696524545/plugin/blob/main/Kruise-Rollouts.gif?raw=true)
+### 新功能（Pod TCP 指标监控）
 
+![Pod TCP指标监控](https://github.com/2696524545/plugin/blob/main/podTcpMonitor.png?raw=true)
+
+
+![多批次发布](https://github.com/2696524545/plugin/blob/main/Kruise-Rollouts.gif?raw=true)
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters.png?raw=true)
 #### 集群管理
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters.png?raw=true)
