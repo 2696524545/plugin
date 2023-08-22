@@ -82,6 +82,7 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
 ### 新功能（Kruise Rollouts 多批次发布）
 
 ![多批次发布](https://github.com/2696524545/plugin/blob/main/Kruise-Rollouts.gif?raw=true)
+
 ### 新功能（Pod TCP 指标监控）
 
 ![Pod TCP指标监控](https://github.com/2696524545/plugin/blob/main/podTcpMonitor.png?raw=true)
