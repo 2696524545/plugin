@@ -1,0 +1,183 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: kubeskoop-exporter
+  namespace: monitoring
+  labels:
+      app.kubernetes.io/component: kubeskoop-exporter
+      app.kubernetes.io/name: kubeskoop-exporter
+      app.kubernetes.io/part-of: kube-prometheus
+      app.kubernetes.io/version: 9.5.3
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: kubeskoop-exporter
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: kubeskoop-exporter
+        app.kubernetes.io/name: kubeskoop-exporter
+        app.kubernetes.io/part-of: kube-prometheus
+        app.kubernetes.io/version: 9.5.3
+    spec:
+      hostNetwork: true
+      hostPID: true
+      hostIPC: true
+      dnsPolicy: ClusterFirstWithHostNet
+      initContainers:
+        - name: inspector-prepare
+          image: registry.cn-hangzhou.aliyuncs.com/acs/btfhack:latest
+          volumeMounts:
+            - name: btf-rawdata
+              mountPath: /etc/net-exporter/btf
+            - mountPath: /boot/
+              name: boot
+          command: [btfhack, discover,-p ,/etc/net-exporter/btf/]
+      containers:
+      - image: "kubeskoop/kubeskoop:latest"
+        name: inspector
+        ports:
+          - name: http-metrics
+            containerPort: 9102
+        env:
+        - name: INSPECTOR_NODENAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        volumeMounts:
+          - name: config-volume
+            mountPath: /etc/config/
+          - name: btf-rawdata
+            mountPath: /etc/net-exporter/btf
+          - name: proc
+            mountPath: /proc
+          - mountPath: /run/containerd/
+            name: containerd
+          - mountPath: /var/run/
+            name: dockershim
+          - mountPath: /sys/fs/bpf
+            name: bpf-maps
+            mountPropagation: HostToContainer
+          - mountPath: /sys/fs/cgroup
+            name: cgroup
+            mountPropagation: HostToContainer
+          - mountPath: /sys/kernel/debug
+            name: bpf-events
+            mountPropagation: HostToContainer
+          - mountPath: /etc/node-hostname
+            name: hostname
+        command: [/bin/inspector,server,-d]
+        securityContext:
+          privileged: true
+        resources:
+          requests:
+            cpu: 500m
+            memory: 1000Mi
+          limits:
+            cpu: 1000m
+            memory: 2000Mi
+      volumes:
+        - name: proc
+          hostPath:
+            path: /proc
+        - name: containerd
+          hostPath:
+            path: /run/containerd/
+        - name: dockershim
+          hostPath:
+            path: /var/run/
+        - hostPath:
+            path: /sys/fs/bpf
+            type: DirectoryOrCreate
+          name: bpf-maps
+        - name: boot
+          hostPath:
+            path: /boot
+            type: DirectoryOrCreate
+        - hostPath:
+            path: /sys/fs/cgroup
+            type: DirectoryOrCreate
+          name: cgroup
+        - hostPath:
+            path: /sys/kernel/debug
+          name: bpf-events
+        - name: hostname
+          hostPath:
+            path: /etc/hostname
+            type: FileOrCreate
+        - name: config-volume
+          configMap:
+            name: kubeskoop-config
+        - name: btf-rawdata
+          emptyDir: {}
+---
+apiVersion: v1
+data:
+  config.yaml: |-
+    debugmode: true
+    metric_config:
+      interval: 15
+      port: 9102
+      probes:
+      - netdev
+      - io
+      - socketlatency
+      - packetloss
+      - sock
+      - tcpsummary
+      - tcp
+      - tcpext
+      - udp
+      - net_softirq
+      - virtcmdlatency
+    event_config:
+      port: 19102
+      loki_enable: true
+      loki_address: loki-service
+      probes:
+      - tcpreset
+      - packetloss
+kind: ConfigMap
+metadata:
+  name: kubeskoop-config
+  namespace: monitoring
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubeskoop-exporter
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/component: kubeskoop-exporter
+    app.kubernetes.io/name: kubeskoop-exporter
+    app.kubernetes.io/part-of: kube-prometheus
+    app.kubernetes.io/version: 9.5.3
+spec:
+  selector:
+    app.kubernetes.io/component: kubeskoop-exporter
+  ports:
+    - protocol: TCP
+      port: 9102
+      targetPort: 9102
+      name: metrics
+
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  generation: 1
+  labels:
+    app.kubernetes.io/component: kubeskoop-exporter
+    app.kubernetes.io/name: kubeskoop-exporter
+    app.kubernetes.io/part-of: kube-prometheus
+    app.kubernetes.io/version: 9.5.3
+  name: kubeskoop-exporter
+  namespace: monitoring
+spec:
+  endpoints:
+  - interval: 15s
+    port: metrics
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: kubeskoop-exporter
