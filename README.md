@@ -1,11 +1,8 @@
 ### 升级内容
 ```
-Kruise Rollouts 是一个旁路组件集成，提供高级渐进式交付功能：
-  1.Deployment、CloneSet、StatefulSet、Advanced StatefulSet的多批量更新策略。
-  2.金丝雀更新部署策略。
+普罗米修斯，监控功能迭代：
+   1. 提供Pod列表监控缩略图展示，方便快速查看资源占用情况
 
-普罗米修斯Pod监控指标增加Pod TCP 指标监控：
-  1.通过kubeskoop-exporter 收集Pod TCP网络指标进行图表展示
 ```
 ### 1.前端插件安装
 #### 插件拷贝至gin-vue-admin/web/src/plugin/ 目录，安装软件依赖
@@ -86,6 +83,10 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
 ### 新功能（Pod TCP 指标监控）
 
 ![Pod TCP指标监控](https://github.com/2696524545/plugin/blob/main/podTcpMonitor.png?raw=true)
+
+### 新功能（Pod 指标监控缩略图）
+
+![Pod TCP指标监控](https://github.com/2696524545/plugin/blob/main/PodMonitor.gif?raw=true)
 
 ![集群管理](https://github.com/2696524545/plugin/blob/main/clusters.png?raw=true)
 #### 集群管理
