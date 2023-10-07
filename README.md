@@ -92,7 +92,7 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
 
 
 ### 新功能（终端审计管理）
-![终端审计](https://github.com/2696524545/plugin/blob/main/终端审计.png?raw=true)
+![终端审计](https://github.com/2696524545/plugin/blob/main/终端审计.gif?raw=true)
 
 ### （Kruise Rollouts 多批次发布）
 
