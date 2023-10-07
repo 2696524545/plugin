@@ -1,7 +1,8 @@
 ### 升级内容
 ```
-普罗米修斯，监控功能迭代：
-   1. 提供Pod列表监控缩略图展示，方便快速查看资源占用情况
+   1. Pod文件浏览，提供Pod文件，上传，下载，删除功能
+   2. Gin-Vue-Admin 用户与K8s RBAC打通，提供个人凭据申请，集群用户管理，集群用户授权，集群权限管理
+   3. Pod终端审计
 
 ```
 ### 1.前端插件安装
@@ -10,9 +11,9 @@
     npm i monaco-editor-vue3@0.1.6 js-yaml@4.1.0  \
           vue-chartjs@4.1.1 \
           xterm@4.19.0 \
-          xterm-addon-fit@0.5.0 \
+          xterm-addon-fit@0.5.0" \
           js-base64@^3.7.3 \
-          moment
+          asciinema-player@^3.6.1
 ```
 ### 2.后端插件安装
 #### 插件放入gin-vue-admin/server/plugin，后端插件引入
@@ -76,15 +77,32 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
 [kubeskoop-exporter YAML 文件]https://github.com/2696524545/plugin/blob/main/kubeskoop-exporter.yaml
 
 ### 9.功能展示
-### 新功能（Kruise Rollouts 多批次发布）
+
+### 新功能（容器文件管理）
+![容器文件管理](https://github.com/2696524545/plugin/blob/main/容器文件管理.png?raw=true)
+
+### 新功能（集群凭据管理）
+![集群凭据](https://github.com/2696524545/plugin/blob/main/集群凭据.png?raw=true)
+
+### 新功能（集群用户管理）
+![集群用户管理](https://github.com/2696524545/plugin/blob/main/集群用户.png?raw=true)
+
+### 新功能（集群权限管理）
+![集群权限](https://github.com/2696524545/plugin/blob/main/集群权限.png?raw=true)
+
+
+### 新功能（终端审计管理）
+![终端审计](https://github.com/2696524545/plugin/blob/main/终端审计.png?raw=true)
+
+### （Kruise Rollouts 多批次发布）
 
 ![多批次发布](https://github.com/2696524545/plugin/blob/main/Kruise-Rollouts.gif?raw=true)
 
-### 新功能（Pod TCP 指标监控）
+### （Pod TCP 指标监控）
 
 ![Pod TCP指标监控](https://github.com/2696524545/plugin/blob/main/podTcpMonitor.png?raw=true)
 
-### 新功能（Pod 指标监控缩略图）
+### （Pod 指标监控缩略图）
 
 ![Pod TCP指标监控](https://github.com/2696524545/plugin/blob/main/PodMonitor.gif?raw=true)
 
