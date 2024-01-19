@@ -23,6 +23,7 @@
           xterm@4.19.0 \
           xterm-addon-fit@0.5.0 \
           js-base64@^3.7.3 \
+          moment@^2.29.4 \
           asciinema-player@^3.6.1
 ```
 ### 2.后端插件安装
