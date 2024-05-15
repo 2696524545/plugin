@@ -1,6 +1,6 @@
 ### 升级内容
 ```
-   1. 支持KubeBlocks中间件管理能力
+   1.集成Kubevela应用管理， 工作流审批，多集群信息查看，多集群Pod查看，终端，终端日志
 ```
 
 ### 容器管理插件能力
@@ -10,6 +10,7 @@
    3. 阿里云开源控制器Openkruise管理能力
    4. 集成Prometheus 监控能力
    5. 集成KubeBlocks管理能力
+   6. 集成Kubevela应用管理能力
 
 方便运维对Kubernetes集群资源的细粒度授权，方便开发管理Kubernetes内的应用对其进行故障排查，提供友好的操作页面降低使用复杂性。
 
@@ -21,10 +22,62 @@
     npm i monaco-editor-vue3@0.1.6 js-yaml@4.1.0  \
           vue-chartjs@4.1.1 \
           xterm@4.19.0 \
-          xterm-addon-fit@0.5.0 \
+          xterm-addon-fit@0.5.0" \
           js-base64@^3.7.3 \
-          moment@^2.29.4 \
-          asciinema-player@^3.6.1
+          asciinema-player@^3.6.1 \
+          vue3-tree-org@^4.2.2 \
+          monaco-editor@^0.48.0
+```
+####  vue3TreeOrg 插件引用全局main.js
+文件路径:  src/main.js
+
+```
+import 'element-plus/es/components/message/style/css'
+import 'element-plus/es/components/loading/style/css'
+import 'element-plus/es/components/notification/style/css'
+import 'element-plus/es/components/message-box/style/css'
+import './style/element_visiable.scss'
+import { createApp } from 'vue'
+// 引入gin-vue-admin前端初始化相关内容
+import './core/gin-vue-admin'
+// 引入封装的router
+import router from '@/router/index'
+import '@/permission'
+import run from '@/core/gin-vue-admin.js'
+import auth from '@/directive/auth'
+import { store } from '@/pinia'
+import App from './App.vue'
+import { initDom } from './utils/positionToCode'
+import vue3TreeOrg from 'vue3-tree-org'          # 这里是引入的第三方包
+import 'vue3-tree-org/lib/vue3-tree-org.css'     # 这里是引入的第三方包
+
+initDom()
+/**
+ * @description 导入加载进度条，防止首屏加载时间过长，用户等待
+ *
+ * */
+import Nprogress from 'nprogress'
+import 'nprogress/nprogress.css'
+Nprogress.configure({ showSpinner: false, ease: 'ease', speed: 500 })
+Nprogress.start()
+
+/**
+ * 无需在这块结束，会在路由中间件中结束此块内容
+ * */
+
+const app = createApp(App)
+app.config.productionTip = false
+
+app
+  .use(run)
+  .use(vue3TreeOrg)   # 这里是引入的第三方包
+  .use(store)
+  .use(auth)
+  .use(router)
+  .mount('#app')
+
+export default app
+
 ```
 ### 2.后端插件安装
 #### 插件放入gin-vue-admin/server/plugin，后端插件引入
@@ -88,10 +141,25 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
 [kubeskoop-exporter YAML 文件]https://github.com/2696524545/plugin/blob/main/kubeskoop-exporter.yaml
 
 ### 9.功能展示
-### 新功能 (KubeBlocks 中间件列表)
+
+### 新功能 (Kubevela 集群关联)
+![集群关联](https://github.com/2696524545/plugin/blob/main/集群关联1.png?raw=true)
+![集群关联列表](https://github.com/2696524545/plugin/blob/main/集群关联2.png?raw=true)
+![集群注册](https://github.com/2696524545/plugin/blob/main/集群关联3.png?raw=true)
+
+### 新功能 (Kubevela 应用管理)
+![应用管理](https://github.com/2696524545/plugin/blob/main/Kubevela应用管理.png?raw=true)
+
+### 新功能 (Kubevela 应用详情)
+![应用详情](https://github.com/2696524545/plugin/blob/main/应用详情.png?raw=true)
+![应用详情](https://github.com/2696524545/plugin/blob/main/应用详情2.png?raw=true)
+![应用详情](https://github.com/2696524545/plugin/blob/main/应用详情3.png?raw=true)
+
+
+### (KubeBlocks 中间件列表)
 ![容器文件管理](https://github.com/2696524545/plugin/blob/main/KubeBlockss-list.png?raw=true)
 
-### 新功能 (KubeBlocks 中间件创建)
+###  (KubeBlocks 中间件创建)
 ![容器文件管理](https://github.com/2696524545/plugin/blob/main/KubeBlocks-create.png?raw=true)
 
 
