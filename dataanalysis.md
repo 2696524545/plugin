@@ -31,3 +31,9 @@ PluginInit(PrivateGroup, dataanalysis.CreateDataAnalysisPlug()) // 访问ip数�
 
 
 ```
+
+# 3 IP信息来源
+```
+http://ip-api.com/json/8.8.8.8?lang=zh-CN&fields=countryCode,country,regionName,city,zip,lat,lon,isp,org,as
+
+```
