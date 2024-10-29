@@ -1,6 +1,6 @@
 ### 升级内容
 ```
-   1.集成Kubevela应用管理， 工作流审批，多集群信息查看，多集群Pod查看，终端，终端日志
+   1. arthas应用诊断能力。
 ```
 
 ### 容器管理插件能力
@@ -11,6 +11,7 @@
    4. 集成Prometheus 监控能力
    5. 集成KubeBlocks管理能力
    6. 集成Kubevela应用管理能力
+   7. arthas应用诊断能力。
 
 方便运维对Kubernetes集群资源的细粒度授权，方便开发管理Kubernetes内的应用对其进行故障排查，提供友好的操作页面降低使用复杂性。
 
@@ -104,6 +105,8 @@ kubernetesRouter := kubernetes.RouterGroupApp.WsApiRouter
 ### 4.后端依赖安装
 ```
  gin-vue-admin 目录执行:    go mod tidy        #安装插件所需依赖
+ 拷贝arthas 到静态资源里面
+ cp  arthas-bin.tar resource/ 
 ```
 
 ### 5.插件协助
@@ -142,15 +145,21 @@ Prometheus 数据查询过多，返回数据较大，导致Gin-Vue-Admin 操作�
 
 ### 9.功能展示
 
-### 新功能 (Kubevela 集群关联)
+### 功能 (arthas 应用诊断能力)
+![应用诊断](https://github.com/2696524545/plugin/blob/main/arthas.gif?raw=true)
+![arthas终端](https://github.com/2696524545/plugin/blob/main/arthas终端.png?raw=true)
+![jvm监控](https://github.com/2696524545/plugin/blob/main/jvm监控.png?raw=true)
+
+
+### 功能 (Kubevela 集群关联)
 ![集群关联](https://github.com/2696524545/plugin/blob/main/集群关联1.png?raw=true)
 ![集群关联列表](https://github.com/2696524545/plugin/blob/main/集群关联2.png?raw=true)
 ![集群注册](https://github.com/2696524545/plugin/blob/main/集群关联3.png?raw=true)
 
-### 新功能 (Kubevela 应用管理)
+### 功能 (Kubevela 应用管理)
 ![应用管理](https://github.com/2696524545/plugin/blob/main/Kubevela应用管理.png?raw=true)
 
-### 新功能 (Kubevela 应用详情)
+### 功能 (Kubevela 应用详情)
 ![应用详情](https://github.com/2696524545/plugin/blob/main/应用详情.png?raw=true)
 ![应用详情](https://github.com/2696524545/plugin/blob/main/应用详情2.png?raw=true)
 ![应用详情](https://github.com/2696524545/plugin/blob/main/应用详情3.png?raw=true)
